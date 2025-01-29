@@ -26,9 +26,8 @@ pcall(function ()
     sound.Volume = 1
     sound:Play()
 
-    sound.Ended:Connect(function ()
-        sound:Destroy() 
-    end)
+    sound.Ended:Wait()
+    sound:Destroy()
 end)
 
 local library = (function ()
