@@ -1032,7 +1032,8 @@ local destructionHooks = {}
                 end
 
                 for _, v in pairs(values) do
-                    addDropButton(v)
+                    local btn = addDropButton(v)
+                    autobutcolor(btn, Colors.Gray.DropDownButton)
                 end
 
                 function dropdown:AddValue(value)
@@ -1071,12 +1072,6 @@ local destructionHooks = {}
                         if v:IsA("TextButton") then
                             v:Destroy()
                         end
-                    end
-                end
-
-                for i, v in pairs(dropdownValuesContainer:GetChildren()) do 
-                    if v:IsA("TextButton") then
-                        autobutcolor(v, Colors.Gray.DropDownButton)
                     end
                 end
 
